@@ -1,9 +1,10 @@
-name: Continuous Integration
+name: CI/CD
 
 on:
   push:
     branches:
       - master
+      - develop
 
   pull_request:
     branches:
@@ -24,14 +25,14 @@ jobs:
         conf:
           - name: Ubuntu (Clang 10 - TSAN)
             os: ubuntu-20.04
-            cc: clang-10
-            cxx: clang++-10
+            cc: clang-11
+            cxx: clang++-11
             tsan: YES
 
           - name: Ubuntu (Clang 10 - no TSAN)
             os: ubuntu-20.04
-            cc: clang-10
-            cxx: clang++-10
+            cc: clang-11
+            cxx: clang++-11
             tsan: NO
 
           - name: macOS (Clang 10 - no TSAN)
